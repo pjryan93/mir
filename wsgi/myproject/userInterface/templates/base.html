@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% load staticfiles %}
+	<title>Amedus</title>
+
+{# Load the tag library{% load staticfiles %} #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% load static %}
+		<link rel="stylesheet"  type="text/css" href="{% static "css/bootstrap.css" %}" />
+    <link rel="stylesheet"  type="text/css" href="{% static "baseUser.css" %}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<div class = "containter-fluid">
+<div class = "row">
+  <div class = "col-md-2">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" class="active"><a href="#">Home</a></li>
+      <li role="presentation" class="active"><a href="#">Jobs</a></li>
+      <li role="presentation" class="active"><a href="#">Settings</a></li>
+       <li role="presentation" class="active"><a href="/userInterface/logout_view/">Logout</a></li>
+    </ul>
+  </div>
+  <div class = "col-md-8">
+  {# Display django.contrib.messages as Bootstrap alerts #}
+  {% bootstrap_messages %}
+  <div class = "standardBackground">
+    <div class = "center-block">
+   
+
+          <div class="panel panel-default" id = "blueBack">
+            <div class="panel-heading" id = "darckerBlueBack">
+              <h2>Upload Data</h2>
+              <p> Please select a WAV file to upload</p>
+          </div>
+          <div class="panel-body">
+  			     {# Display a form #}
+              <form action="/userInterface/fileUpload/" method="post" class="form" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                {% buttons %}
+                <button type="submit" class="btn btn-custom">
+                 {% bootstrap_icon "star" %} Continue
+                </button>
+                {% endbuttons %}
+              </form>
+	         </div>
+          </div>
+
+          
+    </div>
+  </div>
+</div>
+  <div class = "col-md-2">
+  
+  </div>
+</div>
+</div>
+</body>
+</html>

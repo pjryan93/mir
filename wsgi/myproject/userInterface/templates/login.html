@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		{% load staticfiles %}
+		<title>Amadeus</title>
+
+		{# Load the tag library #}
+		{% load bootstrap3 %}
+
+		{# Load CSS and JavaScript #}
+		{% bootstrap_css %}
+		{% bootstrap_javascript %}
+		{% load static %}
+		<link rel="stylesheet"  type="text/css" href="{% static "css/bootstrap.css" %}" />
+   	    <link rel="stylesheet"  type="text/css" href="{% static "baseUser.css" %}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body>
+  <nav class="navbar navbar-default turqBack">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#">Amadeus</a>
+			    </div>
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+			      <ul class="nav navbar-nav navbar-right">
+			        <li><a href="#">Link</a></li>
+			        
+			         
+			        </li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+	</nav>
+	<div class = "container-fluid">
+		{% load bootstrap3 %}
+		<div class = "row">
+			<div class = "col-md-3"></div>
+			<div class = "col-md-6">
+			<div class = "row">
+				<div class = "col-md-2"></div>
+				<div class = "col-md-8 ">
+					<div class="  headBack panel  ">
+				  		<div class="   panel-heading   ">
+				    		<h3 class="panel-title  ">Welcome</h3>
+				  		</div>
+				  		<div class="panel-body turqBack">
+				  			<p>
+				  				<form action="/userInterface/loginAttempt/" method="post" class="form">
+								    {% csrf_token %}
+								    {% bootstrap_form form %}
+				  			</p>
+							<p>
+								<button type="submit" formaction = "/userInterface/loginAttempt/" class="btn btn-custom btn-lg btn-block">Sign In</button>
+								<button type="sumbit" formaction= "/userInterface/signUp/" class="btn btn-custom2 btn-lg btn-block">Register</button>
+								{% csrf_token %}
+								</form>
+							</p>  		
+						</div>
+					</div>
+				</div>
+				<div class = "col-md-2"></div>
+			</div>
+		</div>
+			<div class = "col-md-3"></div>
+		</div>
+	</div>
+	<div class="navbar navbar-fixed-bottom turqBack">
+
+
+	</div>
+</body>
+</html>

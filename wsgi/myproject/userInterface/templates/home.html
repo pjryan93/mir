@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Amedus</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+  {% load staticfiles %}
+
+        <link rel="stylesheet"  type="text/css" href="{% static "css/bootstrap.css" %}" />
+        <link rel="stylesheet"  type="text/css" href="{% static "baseUser.css" %}" />
+        <style>
+
+
+         </style>
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<body>
+    <div class = "jumbotron"id = "blueBack">
+    <div class = "containter-fluid ">
+      <div class="row"> 
+        <div class = "col-md-4"></div>
+        <div class = "col-md-4 ">
+            <h1>Algorithem Selection</h1>
+
+          </br>
+          </br>
+        </div>
+        <div class = "col-md-4"></div>
+      </div>
+
+      <div clas="row "> 
+        <div class = "col-md-4"></div>
+        <div class = "col-md-4 ">
+
+          <div class = "row ">
+            {# Display a form #}
+             <form action="/userInterface/runJob/" method="post">{% csrf_token %}
+              <div class = "col-md-6">
+                  <input class="btn btn-default" method="post" formaction = "/userInterface/loginPage/" type="submit" value="Run Default Algorithem">
+              </div>
+
+              <div class = "col-md-6"></div>
+              <input class="btn btn-default" method="post" formaction = "/userInterface/runJob/" type="submit" value="Customize Algorithem">
+            </form>
+          </div>
+               
+          </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+
+</html>

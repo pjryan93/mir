@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% load staticfiles %}
+	<title>Amedus</title>
+
+{# Load the tag library{% load staticfiles %} #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% load static %}
+		<link rel="stylesheet"  type="text/css" href="{% static "css/bootstrap.css" %}" />
+    <link rel="stylesheet"  type="text/css" href="{% static "baseUser.css" %}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<div class = "containter-fluid">
+<div class = "row">
+  <div class = "col-md-2">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" class="active"><a href="/userInterface/loginPage/">Home</a></li>
+      <li role="presentation" class="active"><a href="#">Jobs</a></li>
+      <li role="presentation" class="active"><a href="#">Settings</a></li>
+       <li role="presentation" class="active"><a href="/userInterface/logout_view/">Logout</a></li>
+    </ul>
+  </div>
+  <div class = "col-md-8 jumbotron">
+  {# Display django.contrib.messages as Bootstrap alerts #}
+
+  {% bootstrap_messages %}
+  {{ results }}
+ </div>
+<div class = "col-md-2"></div>
+</div>
+</body>
+</html>
